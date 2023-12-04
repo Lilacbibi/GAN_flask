@@ -1,0 +1,58 @@
+<!-- ONLY DIFFERENCE IS STYLIZING THE TITLE WITH A BLACK BACKGROUND-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+
+</head>
+<style>
+    .button 
+    {
+        border: none;
+        color: white;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 10px 10px 10px 10px;
+        transition-duration: 0.5s;
+        cursor: pointer;
+        border-radius: 12px
+    }
+
+    .buttonS 
+    {
+        background-color:black; 
+        color: white; 
+        box-shadow: 0 5px rgb(216, 213, 213);
+    }
+
+    .buttonS:hover 
+    {
+        background-color: rgb(58, 116, 241);
+        color: white;
+    }
+
+    .buttonS:active
+    {
+        background-color:rgb(58, 116, 241);
+        box-shadow: 0 1px rgb(216, 213, 213);
+        transform: translateY(2px);
+    }
+
+</style>
+<body>
+    <head>CISB62 Final Project - Chao Xu</head>
+    <hr>
+
+    <h1 style = "text-align: center; background-color: black; color: white; 
+    font-size: 40px; width: 100%; line-height:80px;">
+        {% block title %} Conditional GAN Model Deployment {% endblock %}</h1>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

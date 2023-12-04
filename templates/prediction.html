@@ -1,0 +1,15 @@
+<!-- ONLY DIFFERENCE IS THE CENTER OF TEXT AND FONT ENLARGEMENT -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="text-align: center; ">
+        <!--<h2 style = "font-size: 20px; font-weight: bolder; margin-bottom: 0%; padding-bottom: 0%;">GAN {{label}} Image:</h2> -->       
+        
+        <figure>
+            <figcaption style = "font-size: 30px; font-weight: bolder; padding:5px;">GAN {{label}} Image</figcaption>
+        <img src="{{image}}" alt="Generated Image", width="128", height="128", style="padding-top: 10px"/>
+        </figure>
+        <p><a href="/"><button class="button buttonS" type="submit">Go Back</button></a></p>
+    </div>
+{% endblock %}
