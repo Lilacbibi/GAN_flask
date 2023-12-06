@@ -37,7 +37,7 @@ def gan():
     img = (image * 127.5 + 127.5).astype(np.uint8)
 
     #Plot the image
-    fig,ax = plt.subplots(1)
+    """fig,ax = plt.subplots(1)
     fig.subplots_adjust(left=0,right=1,bottom=0,top=1)
     ax.imshow(np.squeeze(img))
     ax.axis('tight')
@@ -47,8 +47,8 @@ def gan():
 
     # Encode PNG image to base64 string
     pngImageB64String = "data:image/png;base64,"
-    pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
-    return render_template('/prediction.html', image=pngImageB64String, label=label_name)
+    pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')"""
+    return render_template('/prediction.html', image='', label=label_name)
 
 if(__name__ == "__main__"):
     app.run(debug=True)
