@@ -14,6 +14,7 @@ app.secret_key = 'b782b926aefe9fee1115ecfbb6d8f3bcf5b8981cbb90d89a'
 num_classes = 3
 latent_dim =128
 list = ['anime', 'cartoon', 'human']
+gan_model = keras.models.load_model('cGAN.h5', compile=False)
 
 @app.route('/')
 def index():
@@ -29,7 +30,7 @@ def gan():
     random_vector_labels = tf.concat(
             [random_latent_vectors, one_hot_labels], axis=1)
     #Load the model and generate image with noise
-    gan_model = keras.models.load_model('cGAN.h5', compile=False)
+    
     image = gan_model.predict(random_vector_labels, verbose=0)
     img = (image * 127.5 + 127.5).astype(np.uint8)
 
