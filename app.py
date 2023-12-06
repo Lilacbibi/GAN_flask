@@ -29,13 +29,14 @@ def gan():
     random_vector_labels = tf.concat(
             [random_latent_vectors, one_hot_labels], axis=1)
     #Load the model and generate image with noise
-    gan_model = keras.models.load_model('gan.h5', compile=False)
-    image = gan_model.predict(random_vector_labels)
+    gan_model = keras.models.load_model('cGAN.h5', compile=False)
+    image = gan_model.predict(random_vector_labels, verbose=0)
+    img = (image * 127.5 + 127.5).astype(np.uint8)
 
     #Plot the image
     fig,ax = plt.subplots(1)
     fig.subplots_adjust(left=0,right=1,bottom=0,top=1)
-    ax.imshow(np.squeeze(image))
+    ax.imshow(np.squeeze(img))
     ax.axis('tight')
     ax.axis('off')
     pngImage = BytesIO()
