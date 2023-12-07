@@ -1,0 +1,55 @@
+<!-- ONLY DIFFERNCE IS ADDITION OF HOVER BUTTON and size format -->
+
+{% extends 'base.html' %}
+
+{% block content %}   
+    <!-- <style>
+        .button 
+        {
+            border: none;
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            transition-duration: 0.5s;
+            cursor: pointer;
+            border-radius: 12px
+        }
+    
+        .buttonS 
+        {
+            background-color:black; 
+            color: white; 
+            box-shadow: 0 5px rgb(216, 213, 213);
+        }
+    
+        .buttonS:hover 
+        {
+            background-color: rgb(58, 116, 241);
+            color: white;
+        }
+
+        .buttonS:active
+        {
+            background-color:rgb(58, 116, 241);
+            box-shadow: 0 1px rgb(216, 213, 213);
+            transform: translateY(2px);
+        }
+   
+    </style> -->
+    <form method="POST" action='/prediction'>
+        <div style="margin-top: 0px; text-align:center">
+            <h2 style = "font-size:30px; ">Please select a button to generate image:</h2>
+
+            <button class="button buttonS" id='btn_0' name="LabelNumber" value="0" type="submit">Anime</button>
+            <button class="button buttonS" id='btn_1' name="LabelNumber" value="1" type="submit">Cartoon</button>
+            <button class="button buttonS" id='btn_1' name="LabelNumber" value="2" type="submit">Human</button>
+            
+            
+        </div>
+    </form>
+
+{% endblock %}
